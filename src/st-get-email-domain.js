@@ -16,5 +16,11 @@ export default function getEmailDomain(email) {
   while(email[i]!=='@'){
     i++;
   }
-  result+=email.substr(0, i);
+  result+=email.substr(0, i-1);
+  while(email[i]!=='.'){
+    i++;
+  }
+  result+='.';
+  result+=email.substr(email.length-i);
+  return result;
 }
