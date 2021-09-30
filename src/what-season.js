@@ -16,7 +16,7 @@ export default function getSeason( date ) {
     return 'Unable to determine the time of year!';
   }
    let month=date.getMonth();
-   if(month>=2&&current<5){
+   if(month>=2&&month<5){
      return 'spring';
    }
    else if(month>=5&&month<8){
