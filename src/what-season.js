@@ -15,6 +15,17 @@ export default function getSeason( date ) {
   if(!date) {
     return 'Unable to determine the time of year!';
   }
+  try {
+    if (
+      !date ||
+      !(Object.prototype.toString.call(date) === "[object Date]") ||
+      isNaN(date)
+    )
+      throw new Error("Invalid date!");
+  } catch {
+    throw new Error("Invalid date!");
+  }
+  
    let month=date.getMonth();
    if(month>=2&&month<5){
      return 'spring';
